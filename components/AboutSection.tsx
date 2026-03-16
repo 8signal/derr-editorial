@@ -15,8 +15,13 @@ export default function AboutSection() {
       <div className="section-inner">
         <div className="about-layout">
           <ScrollReveal className="about-image-area">
-            <div className="about-image-placeholder">
-              <span>Photo of Amber</span>
+            <div className="about-video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/7-WIh5hMqbg?rel=0&modestbranding=1"
+                title="Meet Amber Derr — The Edit Derr"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
             <div className="about-accent-line" />
           </ScrollReveal>
