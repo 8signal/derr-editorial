@@ -1,14 +1,22 @@
 export default function Footer() {
   return (
-    <footer>
-      <div className="footer-inner">
-        <div className="footer-logo">
-          The Edit <span>Derr</span>
+    <footer className="site-footer">
+      <div className="container footer-inner">
+        <div className="footer-brand">
+          <span className="footer-wordmark">Amber Derr Editorial</span>
+          <span className="footer-tagline">
+            Your words, handled with care.
+          </span>
         </div>
-        <p>&copy; {new Date().getFullYear()} The Edit Derr. All rights reserved.</p>
-        <p>
-          <a href="mailto:amber@theeditderr.com">amber@theeditderr.com</a>
-        </p>
+        <div className="footer-meta">
+          <a href="mailto:amber@amberderreditorial.com" className="footer-email">
+            amber@amberderreditorial.com
+          </a>
+          <p className="footer-copy">
+            &copy; {new Date().getFullYear()} Amber Derr Editorial. All rights
+            reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

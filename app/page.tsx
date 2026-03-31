@@ -1,4 +1,3 @@
-import ScrollProgress from "@/components/ScrollProgress";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
@@ -10,24 +9,27 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import AboutSection from "@/components/AboutSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 import MicroInteractions from "@/components/MicroInteractions";
 
 export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <Navbar />
-      <Hero />
-      <ProblemSection />
-      <SloganBand />
-      <DifferentiatorSection />
-      <ServicesSection />
-      <TransformSection />
-      <TestimonialCarousel />
-      <AboutSection />
-      <CTASection />
-      <Footer />
       <MicroInteractions />
+      <Navbar />
+      <main>
+        <Hero />
+        <ProblemSection />
+        <SloganBand />
+        <DifferentiatorSection />
+        <ServicesSection />
+        <TransformSection />
+        <TestimonialCarousel />
+        <AboutSection />
+        <CTASection />
+      </main>
+      <Footer />
     </>
   );
 }

@@ -1,70 +1,47 @@
 import ScrollReveal from "./ScrollReveal";
 
-const PROBLEMS = [
+const problems = [
   {
-    icon: (
-      <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
     title: "The AI Aftertaste",
-    text: "Your audience notices when something reads like a machine wrote it — even if they can't name what's off. That subtle flatness erodes credibility before you've said a word.",
-    delay: "0.05s",
+    body: "Your audience can feel when something reads like a machine wrote it — even if they can\u2019t put their finger on what\u2019s off. That subtle flatness is doing real damage to your credibility before you\u2019ve said a word. You didn\u2019t work this hard to sound like everyone else.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-      </svg>
-    ),
     title: "The Lost Voice",
-    text: "You didn't spend years building your philosophy and leadership approach just to have it sanded down into something bland. The fear isn't bad writing — it's losing the voice that makes you distinctly you.",
-    delay: "0.15s",
+    body: "You didn\u2019t spend years building your philosophy and leadership point of view just to have it sanded down into something generic. The fear isn\u2019t bad writing \u2014 it\u2019s losing the voice that makes you distinctly you. An editor who \u201cfixes\u201d that out of your work isn\u2019t helping. They\u2019re taking something.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
     title: "The One-Shot Moment",
-    text: "A book isn't a blog post you can fix after publishing. A board deck goes out once. A keynote intro gets one chance. One clunky paragraph can define how an audience sees you.",
-    delay: "0.25s",
+    body: "A book isn\u2019t a blog post you can quietly fix after publishing. A board deck goes out once. A keynote intro gets one chance to land. When the stakes are that high, \u201cpretty good\u201d isn\u2019t good enough \u2014 and you know it.",
   },
 ];
 
 export default function ProblemSection() {
   return (
-    <section className="problem-section" id="problem">
-      <div className="section-inner">
+    <section className="section section--alt" id="problem">
+      <div className="container">
         <ScrollReveal>
-          <p className="section-label">The Stakes</p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <h2 className="section-heading">
-            What keeps leaders up at night <em>isn&apos;t bad writing.</em>
+          <p className="section-eyebrow">The Stakes</p>
+          <h2 className="section-headline">
+            What keeps leaders up at night{" "}
+            <em>isn&rsquo;t bad writing.</em>
             <br />
-            It&apos;s writing that quietly undermines them.
+            It&rsquo;s writing that quietly undermines them.
           </h2>
-        </ScrollReveal>
-        <ScrollReveal>
           <p className="section-intro">
-            You&apos;re commanding in a room and electric on a stage. But on the
-            page, something gets lost. In a world of AI-generated noise, the gap
-            between who you are and how you read has never been more dangerous.
+            You&rsquo;re commanding in a room. On stage, you&rsquo;re electric.
+            But somewhere between your brain and the page, something gets lost.
+            And in a world flooded with AI-generated noise, that gap has never
+            had higher stakes.
           </p>
         </ScrollReveal>
 
         <div className="problem-grid">
-          {PROBLEMS.map((p) => (
-            <ScrollReveal
-              key={p.title}
-              className="problem-card"
-              delay={p.delay}
-            >
-              <div className="problem-icon">{p.icon}</div>
-              <h3>{p.title}</h3>
-              <p>{p.text}</p>
+          {problems.map((p, i) => (
+            <ScrollReveal key={i} delay={i * 100}>
+              <div className="problem-card">
+                <h3 className="problem-card__title">{p.title}</h3>
+                <p className="problem-card__body">{p.body}</p>
+              </div>
             </ScrollReveal>
           ))}
         </div>

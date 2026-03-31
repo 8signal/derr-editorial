@@ -1,6 +1,6 @@
 import ScrollReveal from "./ScrollReveal";
 
-const TRAITS = [
+const traits = [
   "Warm but Exacting",
   "Detail-Obsessed",
   "Voice Preservation",
@@ -11,53 +11,74 @@ const TRAITS = [
 
 export default function AboutSection() {
   return (
-    <section className="about-section" id="about">
-      <div className="section-inner">
-        <div className="about-layout">
-          <ScrollReveal className="about-image-area">
-            <div className="about-video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/7-WIh5hMqbg?rel=0&modestbranding=1"
-                title="Meet Amber Derr — The Edit Derr"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            <div className="about-accent-line" />
-          </ScrollReveal>
+    <section className="section section--alt" id="about">
+      <div className="container">
+        <ScrollReveal>
+          <p className="section-eyebrow">Meet Amber</p>
+        </ScrollReveal>
 
-          <ScrollReveal className="about-text" delay="0.1s">
-            <p className="section-label">Meet Amber</p>
-            <h2>
-              Precision is a form of <em>respect.</em>
-            </h2>
-            <p>
-              I believe that choosing the right word, the right structure, and
-              the right rhythm is an act of care — for the reader and for the
-              leader whose name appears on the work.
-            </p>
-            <p>
-              In a world of commoditized content, executives who communicate
-              with genuine distinctiveness hold a competitive advantage no one
-              can easily replicate. My job is to protect and amplify what&apos;s
-              already strong — never to impose my own style on someone
-              else&apos;s voice.
-            </p>
-            <p>
-              I specialize in business nonfiction, executive communications, and
-              the kind of editorial partnership that gets better the longer we
-              work together. The best editorial relationships are invisible: the
-              editor&apos;s role is to make the client look better — never to be
-              seen in the work itself.
-            </p>
-            <div className="about-traits">
-              {TRAITS.map((trait) => (
-                <span key={trait} className="trait-tag">
-                  {trait}
-                </span>
-              ))}
-            </div>
-          </ScrollReveal>
+        <div className="about-grid">
+          <div className="about-photo-wrap">
+            <ScrollReveal>
+              {/* Replace this div with <Image> once amber.jpg is in /public */}
+              <div className="about-photo-placeholder" aria-hidden="true" />
+            </ScrollReveal>
+          </div>
+
+          <div className="about-content">
+            <ScrollReveal>
+              <h2 className="section-headline about-headline">
+                I got into this because I genuinely{" "}
+                <em>love words.</em>
+                <br />I stayed because I love what they do for people.
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal delay={80}>
+              <p className="about-body">
+                I&rsquo;ve spent my career in the margins &mdash; literally.
+                Editing manuscripts, marking up decks, leaving notes that I hope
+                land like a helpful colleague rather than a red pen. What keeps
+                me here isn&rsquo;t the grammar. It&rsquo;s the moment a client
+                reads something back and says, &ldquo;Yes &mdash; that&rsquo;s
+                exactly what I meant to say.&rdquo;
+              </p>
+              <p className="about-body">
+                That&rsquo;s the thing I&rsquo;m chasing on every project.
+              </p>
+              <p className="about-body">
+                I believe that choosing the right word, the right structure, and
+                the right rhythm is an act of care &mdash; for the reader and
+                for the leader whose name is on the work. In a world where AI
+                can produce &ldquo;technically correct&rdquo; faster than you
+                can blink, the writing that actually moves people is the writing
+                that sounds unmistakably human. My job is to make sure yours
+                does.
+              </p>
+              <p className="about-body">
+                I specialize in business nonfiction, executive communications,
+                and the kind of editorial relationship that gets better the
+                longer we work together. I&rsquo;m serious about the craft.
+                I&rsquo;m not serious about myself. And I genuinely look forward
+                to the projects that land in my inbox.
+              </p>
+              <p className="about-body">
+                If you&rsquo;re working on something that matters to you &mdash;
+                a book, a keynote, a communication that has to land right &mdash;
+                I&rsquo;d love to hear about it.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={160}>
+              <div className="about-traits">
+                {traits.map((t) => (
+                  <span key={t} className="about-trait">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>

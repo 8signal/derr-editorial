@@ -1,135 +1,83 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import ScrollReveal from "./ScrollReveal";
+import { useEffect, useState } from "react";
 
-const TESTIMONIALS = [
+const testimonials = [
   {
     quote:
       "We used Amber on several projects to make sure we got a human touch on copy we needed to connect with visitors. Fantastic communication and turn around times. Will continue to use her as much as we can!",
-    author: "David Gibson",
-    role: "Marketing & Sales Alignment | Smarter Systems",
+    name: "David Gibson",
+    title: "Marketing & Sales Alignment | Smarter Systems",
   },
   {
     quote:
       "Amber is an exceptional copy editor and an absolute joy to work with. She has a sharp editorial eye, catches details others miss, and always meets or beats deadlines. She collaborates beautifully with writers and leadership.",
-    author: "Ryan Togliatti",
-    role: "Digital Alchemist | Transforming Brands Through Digital Marketing",
+    name: "Ryan Togliatti",
+    title: "Digital Alchemist | Transforming Brands Through Digital Marketing",
   },
   {
     quote:
-      "Amber's not only an excellent editor but a trusted collaborator. The combination of her grammatical prowess and editing experience keeps me honest. She's helped me become a better writer, and I couldn't recommend her enough.",
-    author: "Grant Bosch",
-    role: "Copywriting & SEO Strategist",
+      "Amber\u2019s not only an excellent editor but a trusted collaborator. The combination of her grammatical prowess and editing experience keeps me honest. She\u2019s helped me become a better writer, and I couldn\u2019t recommend her enough.",
+    name: "Grant Bosch",
+    title: "Copywriting & SEO Strategist",
   },
   {
     quote:
-      "Amber made editing my book easy and painless. With her skillful eye, she reviewed, edited, and questioned certain parts of my book bringing insight, understanding, and clarity. I highly recommend The Edit Derr.",
-    author: "Dr. Cicone Prince",
-    role: "TEDx Speaker | International Impact Book Awards Winner",
+      "Amber made editing my book easy and painless. With her skillful eye, she reviewed, edited, and questioned certain parts of my book bringing insight, understanding, and clarity. I highly recommend Amber Derr Editorial.",
+    name: "Dr. Cicone Prince",
+    title: "TEDx Speaker | International Impact Book Awards Winner",
   },
   {
     quote:
-      "One of the things an author is concerned about is maintaining authenticity of voice. Amber leaves me alone with the way I want to say things. She ensures that the voice I've been given is not weakened or diminished.",
-    author: "Donna Renee Larsen",
-    role: "Executive Assistant · CEO · Author",
+      "One of the things an author is concerned about is maintaining authenticity of voice. Amber leaves me alone with the way I want to say things. She ensures that the voice I\u2019ve been given is not weakened or diminished.",
+    name: "Donna Renee Larsen",
+    title: "Executive Assistant \u00b7 CEO \u00b7 Author",
   },
 ];
 
 export default function TestimonialCarousel() {
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const touchStartRef = useRef(0);
+  const [active, setActive] = useState(0);
 
-  const goTo = useCallback((index: number) => {
-    setCurrent(index);
-  }, []);
-
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % TESTIMONIALS.length);
-  }, []);
-
-  // Autoplay
   useEffect(() => {
-    timerRef.current = setInterval(next, 6000);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [next, current]);
+    const timer = setInterval(() => {
+      setActive((i) => (i + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartRef.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const diff = touchStartRef.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        setCurrent((c) => (c + 1) % TESTIMONIALS.length);
-      } else {
-        setCurrent(
-          (c) => (c - 1 + TESTIMONIALS.length) % TESTIMONIALS.length
-        );
-      }
-    }
-  };
+  const t = testimonials[active];
 
   return (
-    <section className="testimonials-section" id="testimonials">
-      <div className="section-inner">
-        <ScrollReveal style={{ justifyContent: "center" }}>
-          <p className="section-label" style={{ justifyContent: "center" }}>
-            What They Say
-          </p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <h2
-            className="section-heading"
-            style={{
-              textAlign: "center",
-              maxWidth: 700,
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            Trusted by executives, authors,
-            <br />
-            and <em>business leaders.</em>
-          </h2>
-        </ScrollReveal>
+    <section className="section section--alt" id="testimonials">
+      <div className="container">
+        <p className="section-eyebrow">What They Say</p>
+        <h2 className="section-headline">
+          Trusted by executives, authors, and{" "}
+          <em>business leaders.</em>
+        </h2>
 
-        <ScrollReveal>
-          <div
-            className="testimonial-carousel"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div
-              className="testimonial-track"
-              style={{ transform: `translateX(-${current * 100}%)` }}
-            >
-              {TESTIMONIALS.map((t) => (
-                <div className="testimonial-slide" key={t.author}>
-                  <div className="testimonial-content">
-                    <p className="testimonial-quote">{t.quote}</p>
-                    <p className="testimonial-author">{t.author}</p>
-                    <p className="testimonial-role">{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="testimonial-controls">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  className={`testimonial-dot ${i === current ? "active" : ""}`}
-                  onClick={() => goTo(i)}
-                  aria-label={`Testimonial ${i + 1}`}
-                />
-              ))}
+        <div className="carousel">
+          <div className="carousel-quote" key={active}>
+            <blockquote className="carousel-text">{t.quote}</blockquote>
+            <div className="carousel-attr">
+              <strong className="carousel-name">{t.name}</strong>
+              <span className="carousel-title">{t.title}</span>
             </div>
           </div>
-        </ScrollReveal>
+
+          <div className="carousel-dots" role="tablist" aria-label="Testimonials">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                role="tab"
+                aria-selected={i === active}
+                aria-label={`Testimonial ${i + 1}`}
+                className={`carousel-dot${i === active ? " carousel-dot--active" : ""}`}
+                onClick={() => setActive(i)}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

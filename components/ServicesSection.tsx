@@ -1,55 +1,44 @@
 import ScrollReveal from "./ScrollReveal";
 
-const SERVICES = [
+const services = [
   {
     title: "Book Editing",
-    text: "Full manuscript editing for business books and executive nonfiction — developmental, line, and copy editing that sharpens every sentence while preserving your voice. Your book should open doors, not just sit on a shelf.",
-    delay: "0.05s",
+    body: "Full manuscript editing for business books and executive nonfiction \u2014 developmental, line, and copy editing that sharpens every sentence while keeping your voice intact. Your book should open doors, spark conversations, and make the right people sit up. Let\u2019s make sure it does all three.",
   },
   {
     title: "Executive Communications",
-    text: "Board decks, investor updates, keynote scripts, and high-stakes memos. The writing that defines how your team, your board, and your market see you — polished to match who you actually are.",
-    delay: "0.15s",
+    body: "Board decks, investor updates, keynote scripts, and high-stakes memos. The writing that defines how your team, your board, and your market see you \u2014 edited to match who you actually are in a room. The version that goes out should sound like your best day, not your average Tuesday.",
   },
   {
     title: "Ongoing Editorial Retainer",
-    text: "For leaders who need a trusted editor on call. Monthly partnership that gets more valuable over time — because the better I know your voice, the faster and sharper the work becomes.",
-    delay: "0.25s",
+    body: "For leaders who want a trusted editor on call \u2014 not just for the book, but for everything that follows. Monthly partnership built on knowing your voice well enough that the turnaround gets faster and the quality gets higher the longer we work together.",
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="services-section" id="services">
-      <div className="section-inner">
+    <section className="section section--alt" id="services">
+      <div className="container">
         <ScrollReveal>
-          <p className="section-label">What I Do</p>
-        </ScrollReveal>
-        <ScrollReveal>
-          <h2 className="section-heading">
-            Editorial services for leaders who
-            <br />
+          <p className="section-eyebrow">What I Do</p>
+          <h2 className="section-headline">
+            Editorial services for leaders who{" "}
             <em>need to get it right.</em>
           </h2>
-        </ScrollReveal>
-        <ScrollReveal>
           <p className="section-intro">
-            From book manuscripts to board decks, every piece of writing that
-            carries your name deserves someone who treats your voice as something
-            to protect.
+            Every piece of writing that carries your name deserves someone who
+            treats your voice as something worth protecting \u2014 not a draft to be
+            cleaned up and returned.
           </p>
         </ScrollReveal>
 
         <div className="services-grid">
-          {SERVICES.map((s) => (
-            <ScrollReveal
-              key={s.title}
-              className="service-card"
-              delay={s.delay}
-            >
-              <div className="service-accent" />
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
+          {services.map((s, i) => (
+            <ScrollReveal key={i} delay={i * 100}>
+              <div className="service-card">
+                <h3 className="service-card__title">{s.title}</h3>
+                <p className="service-card__body">{s.body}</p>
+              </div>
             </ScrollReveal>
           ))}
         </div>
