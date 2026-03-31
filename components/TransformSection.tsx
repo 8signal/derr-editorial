@@ -47,7 +47,7 @@ export default function TransformSection() {
               Before
             </p>
             {before.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
+              <ScrollReveal key={i} delay={`${(i * 0.08).toFixed(2)}s`}>
                 <div className="transform-card transform-card--before">
                   <strong className="transform-card__heading">
                     {item.label}
@@ -63,7 +63,7 @@ export default function TransformSection() {
               After
             </p>
             {after.map((item, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
+              <ScrollReveal key={i} delay={`${(i * 0.08).toFixed(2)}s`}>
                 <div className="transform-card transform-card--after">
                   <strong className="transform-card__heading">
                     {item.label}
