@@ -37,7 +37,7 @@ export default function ProblemSection() {
 
         <div className="problem-grid">
           {problems.map((p, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
+            <ScrollReveal key={i} delay={`${(i * 0.1 + 0.05).toFixed(2)}s`}>
               <div className="problem-card">
                 <h3 className="problem-card__title">{p.title}</h3>
                 <p className="problem-card__body">{p.body}</p>

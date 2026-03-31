@@ -45,7 +45,7 @@ export default function DifferentiatorSection() {
 
         <div className="diff-grid">
           {differentiators.map((d, i) => (
-            <ScrollReveal key={i} delay={i * 80}>
+            <ScrollReveal key={i} delay={`${(i * 0.07 + 0.05).toFixed(2)}s`}>
               <div className="diff-card">
                 <span className="diff-card__num">{d.num}</span>
                 <h4 className="diff-card__title">{d.title}</h4>

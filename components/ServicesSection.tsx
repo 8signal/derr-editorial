@@ -34,7 +34,7 @@ export default function ServicesSection() {
 
         <div className="services-grid">
           {services.map((s, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
+            <ScrollReveal key={i} delay={`${(i * 0.1 + 0.05).toFixed(2)}s`}>
               <div className="service-card">
                 <h3 className="service-card__title">{s.title}</h3>
                 <p className="service-card__body">{s.body}</p>

@@ -34,7 +34,7 @@ export default function AboutSection() {
               </h2>
             </ScrollReveal>
 
-            <ScrollReveal delay={80}>
+            <ScrollReveal delay="0.1s">
               <p className="about-body">
                 I&rsquo;ve spent my career in the margins &mdash; literally.
                 Editing manuscripts, marking up decks, leaving notes that I hope
@@ -69,7 +69,7 @@ export default function AboutSection() {
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={160}>
+            <ScrollReveal delay="0.2s">
               <div className="about-traits">
                 {traits.map((t) => (
                   <span key={t} className="about-trait">
