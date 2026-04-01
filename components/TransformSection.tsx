@@ -25,7 +25,6 @@ export default function TransformSection() {
           </h2>
         </ScrollReveal>
 
-<<<<<<< HEAD
         <ScrollReveal>
           <div className="transform-grid">
             <div className="transform-col before">
@@ -33,25 +32,11 @@ export default function TransformSection() {
               {before.map((item, i) => (
                 <div key={item.label} className="transform-item">
                   <div className="label">{item.label}</div>
-=======
-        <div className="transform-grid">
-          <div className="transform-col">
-            <p className="transform-col__label transform-col__label--before">
-              Before
-            </p>
-            {before.map((item, i) => (
-              <ScrollReveal key={i} delay={`${(i * 0.08).toFixed(2)}s`}>
-                <div className="transform-card transform-card--before">
-                  <strong className="transform-card__heading">
-                    {item.label}
-                  </strong>
->>>>>>> c9ce0ebb3fe8a7caf8593dcbdd56e0308d70d153
                   <p>{item.body}</p>
                 </div>
               ))}
             </div>
 
-<<<<<<< HEAD
             <div className="transform-arrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -64,18 +49,6 @@ export default function TransformSection() {
               {after.map((item, i) => (
                 <div key={item.label} className="transform-item">
                   <div className="label">{item.label}</div>
-=======
-          <div className="transform-col">
-            <p className="transform-col__label transform-col__label--after">
-              After
-            </p>
-            {after.map((item, i) => (
-              <ScrollReveal key={i} delay={`${(i * 0.08).toFixed(2)}s`}>
-                <div className="transform-card transform-card--after">
-                  <strong className="transform-card__heading">
-                    {item.label}
-                  </strong>
->>>>>>> c9ce0ebb3fe8a7caf8593dcbdd56e0308d70d153
                   <p>{item.body}</p>
                 </div>
               ))}
