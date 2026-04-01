@@ -17,28 +17,31 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="section section--alt" id="services">
-      <div className="container">
+    <section className="services-section" id="services">
+      <div className="section-inner">
         <ScrollReveal>
-          <p className="section-eyebrow">What I Do</p>
-          <h2 className="section-headline">
+          <p className="section-label">What I Do</p>
+        </ScrollReveal>
+        <ScrollReveal>
+          <h2 className="section-heading">
             Editorial services for leaders who{" "}
             <em>need to get it right.</em>
           </h2>
+        </ScrollReveal>
+        <ScrollReveal>
           <p className="section-intro">
-            Every piece of writing that carries your name deserves someone who
-            treats your voice as something worth protecting \u2014 not a draft to be
-            cleaned up and returned.
+            From book manuscripts to board decks, every piece of writing that
+            carries your name deserves someone who treats your voice as
+            something to protect.
           </p>
         </ScrollReveal>
 
         <div className="services-grid">
           {services.map((s, i) => (
-            <ScrollReveal key={i} delay={`${(i * 0.1 + 0.05).toFixed(2)}s`}>
-              <div className="service-card">
-                <h3 className="service-card__title">{s.title}</h3>
-                <p className="service-card__body">{s.body}</p>
-              </div>
+            <ScrollReveal key={s.title} className="service-card" delay={`${(i * 0.1 + 0.05).toFixed(2)}s`}>
+              <div className="service-accent" />
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
             </ScrollReveal>
           ))}
         </div>

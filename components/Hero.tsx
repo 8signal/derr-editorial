@@ -17,17 +17,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero">
-      <div className="hero-orb hero-orb--1" ref={orb1} />
-      <div className="hero-orb hero-orb--2" ref={orb2} />
+    <section className="hero" id="hero">
+      <div className="hero-bg-orb orb-1" ref={orb1} />
+      <div className="hero-bg-orb orb-2" ref={orb2} />
 
-      <div className="hero-inner">
+      <div className="hero-content">
         <p className="hero-eyebrow">Your Editorial Partner</p>
 
-        <h1 className="hero-headline">
-          Your Words Should Sound Like
-          <br />
-          the <em>Sharpest Version</em> of You.
+        <h1>
+          <span className="hero-line">Your Words Should Sound Like</span>
+          <span className="hero-line">
+            the <em>Sharpest Version</em> of You.
+          </span>
         </h1>
 
         <p className="hero-sub">
@@ -36,19 +37,19 @@ export default function Hero() {
           actually love doing it.
         </p>
 
-        <div className="hero-ctas">
-          <a href="#contact" className="btn btn--primary">
-            Request a Sample Edit
+        <div className="hero-cta-group">
+          <a href="#contact" className="btn-primary">
+            <span>Request a Sample Edit</span>
           </a>
-          <a href="#services" className="btn btn--ghost">
+          <a href="#services" className="btn-secondary">
             How It Works
           </a>
         </div>
       </div>
 
-      <div className="hero-scroll-hint" aria-hidden="true">
+      <div className="hero-scroll-hint">
         <span>Scroll</span>
-        <div className="hero-scroll-line" />
+        <div className="scroll-line" />
       </div>
     </section>
   );

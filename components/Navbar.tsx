@@ -22,50 +22,34 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`navbar${scrolled ? " navbar--scrolled" : ""}`}>
-      <div className="navbar-inner">
-        <a href="/" className="navbar-logo">
-          Amber Derr Editorial
-        </a>
+    <nav className={scrolled ? "scrolled" : ""}>
+      <a href="/" className="nav-logo">
+        Amber Derr Editorial
+      </a>
 
-        <nav className="navbar-links" aria-label="Primary navigation">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="navbar-link">
+      <ul className={`nav-links${menuOpen ? " open" : ""}`}>
+        {links.slice(0, -1).map((l) => (
+          <li key={l.href}>
+            <a href={l.href} onClick={() => setMenuOpen(false)}>
               {l.label}
             </a>
-          ))}
-        </nav>
+          </li>
+        ))}
+      </ul>
 
-        <a href="#contact" className="btn btn--primary navbar-cta">
-          Work With Me
-        </a>
+      <a href="#contact" className="nav-cta btn-primary">
+        <span>Work With Me</span>
+      </a>
 
-        <button
-          className="navbar-hamburger"
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-
-      {menuOpen && (
-        <nav className="navbar-mobile" aria-label="Mobile navigation">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="navbar-mobile-link"
-              onClick={() => setMenuOpen(false)}
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
-      )}
-    </header>
+      <button
+        className={`nav-toggle${menuOpen ? " open" : ""}`}
+        aria-label="Toggle navigation"
+        onClick={() => setMenuOpen((o) => !o)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+    </nav>
   );
 }
