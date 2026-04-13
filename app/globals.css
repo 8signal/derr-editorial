@@ -1119,6 +1119,21 @@ section { padding: 7.5rem 3rem; }
   text-align: center;
   justify-content: center;
 }
+.cta-optional {
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 0.68rem;
+  opacity: 0.6;
+}
+.cta-trust-line {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(239,235,233,0.35);
+  margin-top: 1.5rem;
+  letter-spacing: 0.02em;
+}
 .cta-confirmation {
   position: relative;
   z-index: 1;

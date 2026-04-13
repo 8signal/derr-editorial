@@ -93,7 +93,7 @@ export default function CTASection() {
                 </div>
 
                 <div className="cta-field">
-                  <label htmlFor="cta-phone">Phone</label>
+                  <label htmlFor="cta-phone">Phone <span className="cta-optional">(optional)</span></label>
                   <input
                     id="cta-phone"
                     type="tel"
@@ -126,6 +126,10 @@ export default function CTASection() {
               <button type="submit" className="btn-primary cta-submit">
                 <span>Let&rsquo;s Talk</span>
               </button>
+
+              <p className="cta-trust-line">
+                Trusted by TEDx speakers, published authors, and executive teams.
+              </p>
             </form>
           </ScrollReveal>
         </>

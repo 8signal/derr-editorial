@@ -40,7 +40,7 @@ export default function Hero() {
 
         <div className="hero-cta-group">
           <a href="#contact" className="btn-primary">
-            <span>Request a Sample Edit</span>
+            <span>Let&rsquo;s Talk</span>
           </a>
           <a href="#services" className="btn-secondary">
             How It Works
