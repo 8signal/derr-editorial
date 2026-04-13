@@ -3,15 +3,15 @@ import ScrollReveal from "./ScrollReveal";
 const services = [
   {
     title: "Book Editing",
-    body: "Full manuscript editing for business books and executive nonfiction \u2014 developmental, line, and copy editing that sharpens every sentence while keeping your voice intact. Your book should open doors, spark conversations, and make the right people sit up. Let\u2019s make sure it does all three.",
+    body: "Full manuscript editing for business books and executive nonfiction, developmental, line, and copy editing that sharpens every sentence while keeping your voice intact. Your book should open doors, spark conversations, and make the right people sit up. Let\u2019s make sure it does all three.",
   },
   {
     title: "Executive Communications",
-    body: "Board decks, investor updates, keynote scripts, and high-stakes memos. The writing that defines how your team, your board, and your market see you \u2014 edited to match who you actually are in a room. The version that goes out should sound like your best day, not your average Tuesday.",
+    body: "Board decks, investor updates, keynote scripts, and high-stakes memos. The writing that defines how your team, your board, and your market see you, edited to match who you actually are in a room. The version that goes out should sound like your best day, not your average Tuesday.",
   },
   {
     title: "Ongoing Editorial Retainer",
-    body: "For leaders who want a trusted editor on call \u2014 not just for the book, but for everything that follows. Monthly partnership built on knowing your voice well enough that the turnaround gets faster and the quality gets higher the longer we work together.",
+    body: "For leaders who want a trusted editor on call, not just for the book, but for everything that follows. Monthly partnership built on knowing your voice well enough that the turnaround gets faster and the quality gets higher the longer we work together.",
   },
 ];
 

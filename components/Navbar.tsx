@@ -8,7 +8,7 @@ const links = [
   { label: "Results", href: "#results" },
   { label: "Praise", href: "#testimonials" },
   { label: "About", href: "#about" },
-  { label: "Work With Me", href: "#contact" },
+  { label: "Let\u2019s Talk", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -38,7 +38,7 @@ export default function Navbar() {
       </ul>
 
       <a href="#contact" className="nav-cta btn-primary">
-        <span>Work With Me</span>
+        <span>Let&rsquo;s Talk</span>
       </a>
 
       <button

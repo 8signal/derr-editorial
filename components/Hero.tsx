@@ -23,6 +23,7 @@ export default function Hero() {
 
       <div className="hero-content">
         <p className="hero-eyebrow">Your Editorial Partner</p>
+        <p className="hero-tagline">&ldquo;We used em dashes before AI was a thing&rdquo;&nbsp;&nbsp;<span className="hero-tagline-aside">(IFYKYK)</span></p>
 
         <h1>
           <span className="hero-line">Your Words Should Sound Like</span>
