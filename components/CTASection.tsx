@@ -11,6 +11,8 @@ export default function CTASection() {
     interest: [] as string[],
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const interests = [
     "Write a book",
@@ -27,11 +29,37 @@ export default function CTASection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Replace with actual form submission (e.g., API route, email service)
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          result.error ||
+            "Something went wrong. Please try again or email amber@theeditderr.com directly."
+        );
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -123,9 +151,19 @@ export default function CTASection() {
                 </div>
               </fieldset>
 
-              <button type="submit" className="btn-primary cta-submit">
-                <span>Let&rsquo;s Talk</span>
+              <button
+                type="submit"
+                className="btn-primary cta-submit"
+                disabled={submitting}
+              >
+                <span>{submitting ? "Sending\u2026" : "Let\u2019s Talk"}</span>
               </button>
+
+              {error && (
+                <p className="cta-error" role="alert">
+                  {error}
+                </p>
+              )}
 
               <p className="cta-trust-line">
                 Trusted by TEDx speakers, published authors, and executive teams.
