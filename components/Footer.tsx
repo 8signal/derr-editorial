@@ -7,8 +7,8 @@ export default function Footer() {
         </div>
         <p>&copy; {new Date().getFullYear()} Amber Derr Editorial. All rights reserved.</p>
         <p>
-          <a href="mailto:amber@amberderreditorial.com">
-            amber@amberderreditorial.com
+          <a href="mailto:amber@theeditderr.com">
+            amber@theeditderr.com
           </a>
         </p>
       </div>
