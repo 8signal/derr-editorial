@@ -15,7 +15,7 @@ export default function AboutSection() {
       <div className="section-inner">
         <div className="about-layout">
           <ScrollReveal className="about-image-area">
-            <div className="about-video-wrapper">
+            <div className="about-video-wrapper is-vertical">
               <iframe
                 src="https://www.youtube.com/embed/iZZjqVfT8gY?rel=0&modestbranding=1"
                 title="Meet Amber Derr — Amber Derr Editorial"

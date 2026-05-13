@@ -885,6 +885,12 @@ section { padding: 7.5rem 3rem; }
   box-shadow: 0 12px 40px rgba(62,39,35,0.12);
   transition: all 0.6s var(--ease-out-expo);
 }
+.about-video-wrapper.is-vertical {
+  padding-bottom: 177.78%; /* 9:16 aspect ratio for YouTube Shorts */
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .about-video-wrapper:hover {
   box-shadow: 0 24px 64px rgba(62,39,35,0.18);
   transform: translateY(-4px);
