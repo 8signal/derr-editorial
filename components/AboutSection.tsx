@@ -17,7 +17,7 @@ export default function AboutSection() {
           <ScrollReveal className="about-image-area">
             <div className="about-video-wrapper">
               <iframe
-                src="https://www.youtube.com/embed/7-WIh5hMqbg?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/iZZjqVfT8gY?rel=0&modestbranding=1"
                 title="Meet Amber Derr — Amber Derr Editorial"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
